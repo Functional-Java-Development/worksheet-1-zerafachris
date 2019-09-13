@@ -1,3 +1,4 @@
+import java.util.Collection;
 import java.util.LinkedList;
 
 
@@ -11,6 +12,7 @@ public class AdvancedFilteredList<E> extends LinkedList<E> {
 
     @Override
     public boolean add(final E elem) {
+
         return super.add(filteredList.filter(this, elem));
     }
 
@@ -52,17 +54,27 @@ public class AdvancedFilteredList<E> extends LinkedList<E> {
         return true;
     }
 
-//    @Override
-//    public boolean addAll(final Collection<? extends E> col) {
-//        col.forEach(this::testElement);
-//        return super.addAll(col);
-//    }
-//
-//    @Override
-//    public boolean addAll(final int value, final Collection<?extends E> col){
-//        col.forEach(this::testElement);
-//        return super.addAll(value, col);
-//    }
+    @Override
+    public boolean addAll(final Collection<? extends E> col) {
+        for (E elem : col) {
+            try {
+                add(elem);
+            } catch (IllegalArgumentException e) {
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean addAll(final int value, final Collection<? extends E> col) {
+        for (E elem : col) {
+            try {
+                add(elem);
+            } catch (IllegalArgumentException e) {
+            }
+        }
+        return true;
+    }
 
 
 }

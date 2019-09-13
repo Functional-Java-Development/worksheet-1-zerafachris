@@ -75,27 +75,27 @@ public class Launcher {
         System.out.println("\nQuestion 2:");
         System.out.println(filteredList);
 
-////        Question 3:
-//        System.out.println("\nQuestion 3:");
-//        final var advancedFilteredList = new AdvancedFilteredList<Integer>((list, element) -> {
-//            if (list.stream().noneMatch(elem -> abs(element) % elem == 0)) {
-//                return abs(element);
-//            }
-//            throw new IllegalArgumentException(String.format("Element %s should not be added to the list", element));
-//        }
-//        );
-//
-//
+//        Question 3:
+        System.out.println("\nQuestion 3:");
+        final var advancedFilteredList = new AdvancedFilteredList<Integer>((list, element) -> {
+            if (list.stream().noneMatch(elem -> abs(element) % elem == 0)) {
+                return abs(element);
+            }
+            throw new IllegalArgumentException(String.format("Element %s should not be added to the list", element));
+        }
+        );
+
+
 //        advancedFilteredList.add(81);
 //        advancedFilteredList.add(9);
-////        advancedFilteredList.add(27);
+//        advancedFilteredList.add(27);
 //        advancedFilteredList.addFirst(-5);
 //        advancedFilteredList.addLast(14);
-//        advancedFilteredList.addAll(List.of(15, 3, -6));
-//
-//
-//        System.out.println(advancedFilteredList);
-////        System.out.println(IntegerFactors(10));
+        advancedFilteredList.addAll(List.of(81,9,27,-5,14,15, 3, -6));
+
+
+        System.out.println(advancedFilteredList);
+//        System.out.println(IntegerFactors(10));
     }
 
 
